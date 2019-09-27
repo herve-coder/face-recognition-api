@@ -20,8 +20,6 @@ const db = knex({
 
 const app = express();
 
-// const saltRounds = 10;
-
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -39,5 +37,4 @@ app.post("/register", registerHandler(bcrypt, db));
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`App is listening to port ${process.env.PORT || 3000}`);
-  
 });
